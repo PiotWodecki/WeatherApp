@@ -5,6 +5,7 @@ from PIL import Image, ImageTk
 from tkcalendar import DateEntry
 from datetime import datetime, date, timedelta
 
+from CommonUtils import get_location
 from RequestHandler import get_regular_forecast
 
 
@@ -25,7 +26,8 @@ class ForecastWeatherPage(tk.Frame):
                            command=lambda: controller.show_frame("StartPage"))
         button.pack(pady=(40, 10))
 
-        self.city_text = tk.StringVar()
+        self.current_city = get_location()
+        self.city_text = tk.StringVar(self, value=self.current_city)
         city_entry = tk.Entry(self, textvariable=self.city_text, width='19',
                               font=('Courier New', 35, 'bold'),
                               justify=tk.CENTER)

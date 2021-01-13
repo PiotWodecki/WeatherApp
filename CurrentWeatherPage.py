@@ -3,11 +3,13 @@ import tkinter as tk
 from tkinter import messagebox
 from PIL import Image, ImageTk
 
+from CommonUtils import get_location
 from RequestHandler import get_weather
 
 
 class CurrentWeatherPage(tk.Frame):
 
+    #creating view of frame
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
         self.controller = controller
@@ -23,7 +25,8 @@ class CurrentWeatherPage(tk.Frame):
                            command=lambda: controller.show_frame("StartPage"))
         button.pack(pady=(30, 10))
 
-        self.city_text = tk.StringVar()
+        self.current_city = get_location()
+        self.city_text = tk.StringVar(self, value=self.current_city)
         city_entry = tk.Entry(self, textvariable=self.city_text, width='19',
                               font=('Courier New', 35, 'bold'),
                               justify=tk.CENTER)

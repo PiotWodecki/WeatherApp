@@ -1,6 +1,7 @@
+import sys
 import tkinter as tk
 
-
+#this class manage menu of the app
 class StartPage(tk.Frame):
 
     def __init__(self, parent, controller):
@@ -33,4 +34,21 @@ class StartPage(tk.Frame):
                                  command=lambda: controller.show_frame("ForecastWeatherGraph"))
 
         self.button3.pack(pady=10)
+
+        self.button4 = tk.Button(self, text="Model regresji liniowej", bg='gray26', fg='gray87',
+                                 width='35',
+                                 height='2',
+                                 font=('Courier New', 15, 'bold'),
+                                 command=lambda: controller.show_frame("OLSPredictionWeatherPage"))
+
+        self.button4.pack(pady=10)
+
+        self.button4 = tk.Button(self, text="Obecne zanieczyszczenie", bg='gray26', fg='gray87',
+                                 width='35',
+                                 height='2',
+                                 font=('Courier New', 15, 'bold'),
+                                 command=lambda: controller.show_frame("CurrentAirPolutionPage"))
+
+        self.button4.pack(pady=10)
+
 

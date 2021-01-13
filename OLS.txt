@@ -1,0 +1,64 @@
+Ordinary least square model for kielce
+
+Correlations: 
+ meantemp
+meanhumidity -0.801141068086715
+meanclouds -0.6434478016788427
+maxpressure -0.5378803987609643
+meanpressure -0.19993748558739904
+maxclouds 0.0017147547358781488
+maxhumidity 0.020734797933370817
+minpressure 0.15499207319195202
+maxprecipitation 0.3628187407650714
+meanprecipitation 0.37196044478869356
+mintemp 0.9918899550954461
+maxtemp 0.9962103009994775
+meantemp 1.0
+minhumidity 
+
+Model summary
+
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:               meantemp   R-squared:                       0.989
+Model:                            OLS   Adj. R-squared:                  0.989
+Method:                 Least Squares   F-statistic:                     5265.
+Date:                Wed, 13 Jan 2021   Prob (F-statistic):               0.00
+Time:                        21:16:03   Log-Likelihood:                -434.23
+No. Observations:                 363   AIC:                             882.5
+Df Residuals:                     356   BIC:                             909.7
+Df Model:                           6                                         
+Covariance Type:            nonrobust                                         
+==================================================================================
+                     coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------
+const              2.6986     15.345      0.176      0.861     -27.480      32.877
+meantemp_1         1.0513      0.050     21.073      0.000       0.953       1.149
+meantemp_2        -0.3493      0.072     -4.845      0.000      -0.491      -0.208
+meantemp_3         0.2650      0.049      5.385      0.000       0.168       0.362
+meanpressure_1     0.0247      0.015      1.629      0.104      -0.005       0.055
+meanclouds_1      -0.0223      0.005     -4.410      0.000      -0.032      -0.012
+maxpressure_1     -0.0165      0.009     -1.805      0.072      -0.034       0.001
+==============================================================================
+Omnibus:                        2.143   Durbin-Watson:                   2.031
+Prob(Omnibus):                  0.342   Jarque-Bera (JB):                2.042
+Skew:                          -0.184   Prob(JB):                        0.360
+Kurtosis:                       3.013   Cond. No.                     5.48e+05
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 5.48e+05. This might indicate that there are
+strong multicollinearity or other numerical problems.
+The Explained Variance: 0.99
+The Mean Absolute Error: 0.60 degrees celsius
+The Median Absolute Error: 0.53 degrees celsius
+Params
+const             2.698572
+meantemp_1        1.051343
+meantemp_2       -0.349332
+meantemp_3        0.264987
+meanpressure_1    0.024699
+meanclouds_1     -0.022347
+maxpressure_1    -0.016494
+dtype: float64

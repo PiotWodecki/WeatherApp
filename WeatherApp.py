@@ -1,7 +1,8 @@
 import tkinter as tk
 from tkinter import font as tkfont
 
-
+from CurrentAirPollutionPage import CurrentAirPolutionPage
+from OLSPredictionWeatherPage import OLSPredictionWeatherPage
 from CurrentWeatherPage import CurrentWeatherPage
 from StartPage import StartPage
 from ForecastWeatherPage import ForecastWeatherPage
@@ -24,7 +25,8 @@ class WeatherApp(tk.Tk):
         container.grid_columnconfigure(0, weight=1)
 
         self.frames = {}
-        for F in (StartPage, CurrentWeatherPage, ForecastWeatherPage, ForecastWeatherGraph):
+        for F in (StartPage, CurrentWeatherPage, ForecastWeatherPage, ForecastWeatherGraph,
+                  OLSPredictionWeatherPage, CurrentAirPolutionPage):
             page_name = F.__name__
             frame = F(parent=container, controller=self)
             self.frames[page_name] = frame
