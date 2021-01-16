@@ -5,13 +5,13 @@ from os import startfile
 from sklearn.metrics import explained_variance_score, \
     mean_absolute_error, \
     median_absolute_error
-# from sklearn.model_selection import train_test_split
-# from sklearn.linear_model import LinearRegression
-# from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
 from datetime import datetime, timedelta
 
 import os
-# import tensorflow as tf
+import tensorflow as tf
 import pandas as pd
 import matplotlib.pyplot as plt
 #this unused libraries are neccessary to use statsmodel.api :(
@@ -284,6 +284,7 @@ def wx_input_fn(X, y=None, num_epochs=None, shuffle=True, batch_size=150):
                                                num_epochs=num_epochs,
                                                shuffle=shuffle,
                                                batch_size=batch_size)
+
 
 
 def handle_col_to_remove(df):
